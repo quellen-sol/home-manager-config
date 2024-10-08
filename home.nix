@@ -20,6 +20,12 @@
   home.packages = [
     pkgs.rustup
     pkgs.htop
+    pkgs.btop
+
+    # Node
+    pkgs.fnm
+    
+    pkgs.zip
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -187,6 +193,11 @@
       fi
 
       export PATH=/home/quellen/dev/bin:$PATH
+      export PATH=/home/quellen/dev/archipelago-bot/target/release:$PATH
+      export PATH=/home/quellen/.cargo/bin/:$PATH
+      export PATH=/home/quellen/.local/share/solana/install/active_release/bin:$PATH
+
+      eval \"$(fnm env --use-on-cd --shell bash)\"
 
       eval $(starship init bash)
     ";
