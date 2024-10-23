@@ -106,6 +106,10 @@
       gpg = {
         format = "ssh";
       };
+
+      pull = {
+        rebase = false;
+      };
     };
   };
 
@@ -192,11 +196,11 @@
         fi
       fi
 
-      export PATH=/home/quellen/dev/bin:$PATH
-      export PATH=/home/quellen/dev/archipelago-bot/target/release:$PATH
-      export PATH=/home/quellen/.cargo/bin/:$PATH
-      export PATH=/home/quellen/.local/share/solana/install/active_release/bin:$PATH
-
+      export PATH=$HOME/dev/bin:$PATH
+      export PATH=$HOME/dev/archipelago-bot/target/release:$PATH
+      export PATH=$HOME/.cargo/bin:$PATH
+      export PATH=$HOME/.local/share/solana/install/active_release/bin:$PATH
+      
       eval \"$(fnm env --use-on-cd --shell bash)\"
 
       eval $(starship init bash)
